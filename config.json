@@ -1,0 +1,16 @@
+{
+  "params":{
+    "local_server": "True",
+    "local_database": "flask_blog",
+    "prod_database": "prod_db",
+    "facebook_url":"https://www.facebook.com/aakash.tank.56/",
+    "tweeter_url":"https://mobile.twitter.com/theskindoctor13?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+    "github_url": "https://github.com/harshitsh117",
+    "about-text": "About our blogging website.",
+    "admin_user": "harshitsh117@gmail.com",
+    "admin_password": "harshit123",
+    "upload_location": "/home/deepak/PycharmProjects/Flask-tut/static",
+    "no_of_posts": 2
+  }
+}
+
