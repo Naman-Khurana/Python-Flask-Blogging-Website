@@ -108,6 +108,7 @@ def contact():
 
         # server.sendmail("senders_eamil","recievers_eamil","message")
         # server.sendmail("demo.harshit117@gmail.com", email, name + " has tried contacting you.")
+        flash("Thanks for contacting us. We will get back to you soon","success")
 
     return render_template(('contact.html'),params=params)
 
@@ -153,6 +154,7 @@ def edit(sno):
                   con.commit()
               except Exception as e:
                   print(e)
+              flash("Your post has been edited.","success")
               return redirect('/edit/'+sno)
           else:
               # print("in get")
@@ -188,6 +190,7 @@ def addpost():
             con.commit()
         except Exception as e:
             print(e)
+        flash("Your post has been added successfully.")
         return redirect('/dashboard')
 
     return render_template('addpost.html',params=params)
@@ -212,7 +215,7 @@ def login():
             posts = cur.fetchall()
             return render_template('dashboard.html', params=params,posts=posts)
         else:
-            print("unsuccessfull")
+            redirect('/dashboard')
     return render_template('login.html',params=params)
 
 
@@ -236,6 +239,7 @@ def delete(sno):
         con.commit()
     except Exception as e:
         print(e)
+    flash("Your posts has been deleted successfully","success")
 
     return redirect('/dashboard')
 

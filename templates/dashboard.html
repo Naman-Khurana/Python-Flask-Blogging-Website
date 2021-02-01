@@ -27,6 +27,18 @@
       <a href="/addpost"><button style="background-color: #0085a1; border-color: #0085a1; font-size: 18px; font-weight: bold; color: white; padding: 2px 14px; letter-spacing: 1px; /* text-transform: uppercase; */ border-radius: 0; font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;">Add</button></a>
       <a href="/logout"><button style="background-color: #0085a1; border-color: #0085a1; font-size: 18px; font-weight: bold; color: white; padding: 2px 14px; letter-spacing: 1px; /* text-transform: uppercase; */ border-radius: 0; font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;">Log Out</button></a>
 <hr>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+  <div class="alert alert-{{category}}" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
     
     <!-- Creating a loop in jinja template -->
     
